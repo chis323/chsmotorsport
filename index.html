@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Diagnoză auto profesională, analiză live, verificări pre-cumpărare și interpretarea erorilor pentru autoturisme din România.">
+  <meta name="theme-color" content="#090909">
+  <title>Redline Diagnostics | Diagnoză auto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-noise" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-shell">
+      <a class="brand" href="#top" aria-label="Redline Diagnostics - Acasă">
+        <span class="brand-mark">RD</span>
+        <span class="brand-copy"><strong>REDLINE</strong><small>DIAGNOSTICS</small></span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Deschide meniul" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="Navigație principală">
+        <a href="#servicii">Servicii</a>
+        <a href="#proces">Proces</a>
+        <a href="#preturi">Prețuri</a>
+        <a href="#despre">Despre</a>
+        <a class="nav-cta" href="#programare">Programare</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-media" aria-hidden="true">
+        <img src="assets/racing-car.gif" alt="">
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-stripes" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <div class="hero-copy reveal">
+          <p class="kicker"><span></span> Diagnoză. Date. Performanță.</p>
+          <h1>Nu ghicim problema.<br><em>O măsurăm.</em></h1>
+          <p class="hero-lead">Diagnoză computerizată, interpretarea codurilor de eroare și analiză live pentru mașini de stradă și proiecte performance.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#programare">Programează diagnoza</a>
+            <a class="btn btn-ghost" href="tel:+40700000000">Sună acum</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>30–60</strong><span>minute / verificare</span></div>
+            <div><strong>OBD-II</strong><span>scanare multi-modul</span></div>
+            <div><strong>LIVE</strong><span>parametri în timp real</span></div>
+          </div>
+        </div>
+
+        <aside class="telemetry-card reveal delay-1" aria-label="Exemplu date de diagnoză">
+          <div class="telemetry-head">
+            <span class="live-dot"></span>
+            <strong>LIVE TELEMETRY</strong>
+            <small>CONNECTED</small>
+          </div>
+          <div class="rpm-zone">
+            <div class="rpm-ring">
+              <span>RPM</span>
+              <strong id="rpmValue">3,840</strong>
+              <small>x1000</small>
+            </div>
+          </div>
+          <div class="telemetry-grid">
+            <div><span>Boost</span><strong>0.84 bar</strong></div>
+            <div><span>Coolant</span><strong>91°C</strong></div>
+            <div><span>Battery</span><strong>14.2 V</strong></div>
+            <div><span>Lambda</span><strong>0.98</strong></div>
+          </div>
+          <div class="fault-row">
+            <div><span>COD DETECTAT</span><strong>P0303</strong></div>
+            <p>Rateu de ardere detectat la cilindrul 3</p>
+          </div>
+        </aside>
+      </div>
+
+      <a class="scroll-cue" href="#servicii" aria-label="Derulează la servicii"><span></span>SCROLL</a>
+    </section>
+
+    <section class="brand-strip" aria-label="Compatibilitate mărci">
+      <div class="container brand-strip-inner">
+        <p>Diagnoză multi-brand</p>
+        <div><span>BMW</span><span>AUDI</span><span>VOLKSWAGEN</span><span>MERCEDES</span><span>FORD</span><span>RENAULT</span><span>HONDA</span></div>
+      </div>
+    </section>
+
+    <section class="section services" id="servicii">
+      <div class="container">
+        <header class="section-heading reveal">
+          <p class="kicker dark"><span></span> Servicii</p>
+          <h2>Mai mult decât o simplă<br><em>ștergere de erori.</em></h2>
+          <p>Fiecare diagnoză include interpretare, context tehnic și recomandări clare, nu doar o listă de coduri.</p>
+        </header>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <span class="card-number">01</span>
+            <div class="service-icon">ECU</div>
+            <h3>Diagnoză computerizată</h3>
+            <p>Scanarea modulelor electronice și interpretarea codurilor active, memorate sau intermitente.</p>
+            <ul><li>Motor și transmisie</li><li>ABS, airbag și confort</li><li>Resetare după remediere</li></ul>
+          </article>
+
+          <article class="service-card service-card-dark reveal delay-1">
+            <span class="tag">RECOMANDAT</span>
+            <span class="card-number">02</span>
+            <div class="service-icon">BUY</div>
+            <h3>Verificare pre-cumpărare</h3>
+            <p>Evaluare electronică și vizuală pentru a reduce riscul unei achiziții costisitoare.</p>
+            <ul><li>Istoric erori</li><li>Parametri motor live</li><li>Raport de risc</li></ul>
+          </article>
+
+          <article class="service-card reveal delay-2">
+            <span class="card-number">03</span>
+            <div class="service-icon">LIVE</div>
+            <h3>Analiză parametri live</h3>
+            <p>Monitorizarea senzorilor și corelațiilor relevante pentru defecte greu de reprodus.</p>
+            <ul><li>Misfire și corecții</li><li>Presiuni și temperaturi</li><li>Încărcare și alimentare</li></ul>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="card-number">04</span>
+            <div class="service-icon">RST</div>
+            <h3>Resetări și adaptări</h3>
+            <p>Operațiuni electronice necesare după mentenanță sau înlocuirea unor componente.</p>
+            <ul><li>Reset service</li><li>Adaptări senzori</li><li>Regenerare DPF</li></ul>
+          </article>
+
+          <article class="service-card reveal delay-1">
+            <span class="card-number">05</span>
+            <div class="service-icon">12V</div>
+            <h3>Baterie și încărcare</h3>
+            <p>Testarea bateriei, a căderii de tensiune la pornire și a alternatorului.</p>
+            <ul><li>Tensiune în repaus</li><li>Test la pornire</li><li>Verificare alternator</li></ul>
+          </article>
+
+          <article class="service-card reveal delay-2">
+            <span class="card-number">06</span>
+            <div class="service-icon">MIL</div>
+            <h3>Martori în bord</h3>
+            <p>Identificarea cauzei pentru Check Engine, ABS, ESP, airbag, DPF sau AdBlue.</p>
+            <ul><li>Identificarea cauzei</li><li>Evaluarea gravității</li><li>Pași recomandați</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="proces">
+      <div class="container process-layout">
+        <div class="process-copy reveal">
+          <p class="kicker"><span></span> Proces</p>
+          <h2>De la simptom<br>la <em>date clare.</em></h2>
+          <p>Corelăm ceea ce simți la volan cu erorile, valorile live și comportamentul real al mașinii.</p>
+          <a class="inline-link" href="#programare">Solicită o programare <span>→</span></a>
+        </div>
+
+        <div class="process-steps">
+          <article class="process-step reveal">
+            <span>01</span><div><h3>Discuție inițială</h3><p>Stabilim simptomele, momentul apariției și istoricul recent al mașinii.</p></div>
+          </article>
+          <article class="process-step reveal delay-1">
+            <span>02</span><div><h3>Scanare și măsurători</h3><p>Citirea modulelor, testarea parametrilor și verificarea valorilor relevante.</p></div>
+          </article>
+          <article class="process-step reveal delay-2">
+            <span>03</span><div><h3>Interpretare tehnică</h3><p>Primești o explicație clară, nivelul de risc și ordinea recomandată a reparațiilor.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing" id="preturi">
+      <div class="container">
+        <header class="section-heading centered reveal">
+          <p class="kicker dark"><span></span> Prețuri orientative</p>
+          <h2>Fără surprize.<br><em>Fără costuri ascunse.</em></h2>
+          <p>Costul final poate varia în funcție de marcă, model, acces și complexitatea investigației.</p>
+        </header>
+
+        <div class="pricing-grid">
+          <article class="price-card reveal">
+            <span class="price-type">START</span>
+            <h3>Scanare rapidă</h3>
+            <div class="price"><strong>100</strong><span>LEI</span></div>
+            <ul><li>Module principale</li><li>Citire coduri</li><li>Explicație verbală</li></ul>
+            <a class="btn btn-outline" href="#programare">Alege pachetul</a>
+          </article>
+
+          <article class="price-card price-card-featured reveal delay-1">
+            <span class="price-type">BEST VALUE</span>
+            <h3>Diagnoză completă</h3>
+            <div class="price"><strong>180</strong><span>LEI</span></div>
+            <ul><li>Scanare multi-modul</li><li>Analiză parametri live</li><li>Interpretare tehnică</li><li>Raport cu recomandări</li></ul>
+            <a class="btn btn-primary" href="#programare">Alege pachetul</a>
+          </article>
+
+          <article class="price-card reveal delay-2">
+            <span class="price-type">PRE-BUY</span>
+            <h3>Pre-cumpărare</h3>
+            <div class="price"><strong>350</strong><span>LEI</span></div>
+            <ul><li>Diagnoză electronică</li><li>Inspecție vizuală</li><li>Test drive, unde este posibil</li><li>Raport de risc</li></ul>
+            <a class="btn btn-outline" href="#programare">Alege pachetul</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="despre">
+      <div class="container about-layout">
+        <div class="about-visual reveal">
+          <div class="about-photo">
+            <span class="about-label">DATA<br>OVER<br>GUESSWORK</span>
+          </div>
+          <div class="about-badge"><strong>100%</strong><span>explicații clare</span></div>
+        </div>
+
+        <div class="about-copy reveal delay-1">
+          <p class="kicker dark"><span></span> Despre noi</p>
+          <h2>Abordare tehnică.<br><em>Comunicare simplă.</em></h2>
+          <p>Scopul nostru este să transformăm datele complicate ale mașinii într-o explicație pe care o poți folosi pentru a lua decizii bune.</p>
+          <div class="about-points">
+            <div><span>✓</span><p><strong>Nu schimbăm piese la întâmplare.</strong> Începem cu măsurători și dovezi.</p></div>
+            <div><span>✓</span><p><strong>Nu ascundem detaliile.</strong> Îți explicăm ce este urgent și ce poate aștepta.</p></div>
+            <div><span>✓</span><p><strong>Respectăm mașinile modificate.</strong> Analizăm inclusiv contextul unui setup performance.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking" id="programare">
+      <div class="container booking-layout">
+        <div class="booking-copy reveal">
+          <p class="kicker"><span></span> Programare</p>
+          <h2>Spune-ne ce face mașina.<br><em>Noi verificăm de ce.</em></h2>
+          <p>Completează formularul și vei primi confirmarea telefonic. Înlocuiește datele demonstrative cu numărul și locația afacerii tale.</p>
+          <div class="contact-list">
+            <a href="tel:+40700000000"><span>PHONE</span> +40 700 000 000</a>
+            <a href="mailto:contact@redlinediagnostics.ro"><span>EMAIL</span> contact@redlinediagnostics.ro</a>
+            <p><span>LOCATION</span> Cluj-Napoca, România</p>
+          </div>
+        </div>
+
+        <form class="booking-form reveal delay-1" id="bookingForm">
+          <div class="form-row">
+            <label>Nume<input type="text" name="name" placeholder="Numele tău" required></label>
+            <label>Telefon<input type="tel" name="phone" placeholder="07xx xxx xxx" required></label>
+          </div>
+          <div class="form-row">
+            <label>Marcă și model<input type="text" name="car" placeholder="Ex: Honda Civic 1.5T" required></label>
+            <label>An fabricație<input type="number" name="year" min="1980" max="2030" placeholder="2019"></label>
+          </div>
+          <label>Serviciu
+            <select name="service" required>
+              <option value="">Selectează serviciul</option>
+              <option>Scanare rapidă</option>
+              <option>Diagnoză completă</option>
+              <option>Verificare pre-cumpărare</option>
+              <option>Analiză parametri live</option>
+            </select>
+          </label>
+          <label>Simptome / detalii<textarea name="message" rows="4" placeholder="Descrie când apare problema, martorii aprinși și orice intervenție recentă."></textarea></label>
+          <button class="btn btn-primary full" type="submit">Trimite solicitarea</button>
+          <p class="form-note">Formular demonstrativ frontend-only. Pentru trimitere reală este necesar un serviciu precum Formspree, EmailJS sau un backend.</p>
+          <div class="form-success" role="status">Solicitarea a fost înregistrată în demonstrație. Te vom contacta pentru confirmare.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#top"><span class="brand-mark">RD</span><span class="brand-copy"><strong>REDLINE</strong><small>DIAGNOSTICS</small></span></a>
+        <p>Diagnoză auto bazată pe măsurători, interpretare și comunicare transparentă.</p>
+      </div>
+      <div><h3>Navigație</h3><a href="#servicii">Servicii</a><a href="#proces">Proces</a><a href="#preturi">Prețuri</a><a href="#programare">Programare</a></div>
+      <div><h3>Program</h3><p>Luni–Vineri: 09:00–18:00</p><p>Sâmbătă: cu programare</p><p>Duminică: închis</p></div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="yearNow"></span> Redline Diagnostics</span><span>Site frontend demonstrativ</span></div>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/40700000000" target="_blank" rel="noopener" aria-label="Contact WhatsApp">WA</a>
+  <script src="script.js"></script>
+</body>
+</html>
