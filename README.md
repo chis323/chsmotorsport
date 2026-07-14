@@ -1,4 +1,4 @@
-# Redline Diagnostics
+# CHS Motors Diagnostics
 
 Site frontend responsive pentru o afacere de diagnoză auto din România, cu identitate vizuală motorsport în roșu, alb și negru.
 
