@@ -24,11 +24,49 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
 
 const rpmElement = document.getElementById('rpmValue');
-const rpmValues = ['3,840', '4,120', '4,560', '5,020', '4,680', '4,210'];
+const rpmGaugeArc = document.getElementById('rpmGaugeArc');
+const rpmGaugeTicks = document.getElementById('rpmGaugeTicks');
+const rpmValues = [3840, 4120, 4560, 5020, 4680, 4210];
+const rpmGaugeMax = 8000;
 let rpmIndex = 0;
+
+function buildRpmTicks() {
+  if (!rpmGaugeTicks) return;
+
+  const centerX = 120;
+  const centerY = 132;
+  const outerRadius = 105;
+  const tickCount = 20;
+
+  for (let index = 0; index <= tickCount; index += 1) {
+    const angle = Math.PI - (Math.PI * index / tickCount);
+    const isMajor = index % 5 === 0;
+    const innerRadius = isMajor ? 88 : 94;
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+
+    line.setAttribute('x1', String(centerX + Math.cos(angle) * innerRadius));
+    line.setAttribute('y1', String(centerY - Math.sin(angle) * innerRadius));
+    line.setAttribute('x2', String(centerX + Math.cos(angle) * outerRadius));
+    line.setAttribute('y2', String(centerY - Math.sin(angle) * outerRadius));
+    if (isMajor) line.classList.add('major');
+    rpmGaugeTicks.appendChild(line);
+  }
+}
+
+function updateRpmGauge(rpm) {
+  if (rpmElement) rpmElement.textContent = rpm.toLocaleString('en-US');
+  if (rpmGaugeArc) {
+    const percentage = Math.max(0, Math.min(100, (rpm / rpmGaugeMax) * 100));
+    rpmGaugeArc.style.strokeDasharray = `${percentage} ${100 - percentage}`;
+  }
+}
+
+buildRpmTicks();
+updateRpmGauge(rpmValues[0]);
+
 setInterval(() => {
   rpmIndex = (rpmIndex + 1) % rpmValues.length;
-  if (rpmElement) rpmElement.textContent = rpmValues[rpmIndex];
+  updateRpmGauge(rpmValues[rpmIndex]);
 }, 850);
 
 const yearElement = document.getElementById('yearNow');

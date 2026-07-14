@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <meta name="description" content="Diagnoză auto profesională, analiză live, verificări pre-cumpărare și interpretarea erorilor pentru autoturisme din România.">
   <meta name="theme-color" content="#090909">
   <title>CHS Motors Diagnostics</title>
@@ -65,10 +66,17 @@
             <small>CONNECTED</small>
           </div>
           <div class="rpm-zone">
-            <div class="rpm-ring">
-              <span>RPM</span>
-              <strong id="rpmValue">3,840</strong>
-              <small>x1000</small>
+            <div class="rpm-gauge" aria-label="Turație motor animată">
+              <svg class="rpm-gauge-svg" viewBox="0 0 240 155" role="img" aria-hidden="true">
+                <path class="rpm-gauge-track" pathLength="100" d="M 24 132 A 96 96 0 0 1 216 132" />
+                <path id="rpmGaugeArc" class="rpm-gauge-arc" pathLength="100" d="M 24 132 A 96 96 0 0 1 216 132" />
+                <g id="rpmGaugeTicks" class="rpm-gauge-ticks"></g>
+              </svg>
+              <div class="rpm-gauge-readout">
+                <span>RPM</span>
+                <strong id="rpmValue">3,840</strong>
+                <small>x1000</small>
+              </div>
             </div>
           </div>
           <div class="telemetry-grid">
