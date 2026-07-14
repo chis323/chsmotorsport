@@ -31,12 +31,82 @@ setInterval(() => {
   if (rpmElement) rpmElement.textContent = rpmValues[rpmIndex];
 }, 850);
 
-const bookingForm = document.getElementById('bookingForm');
-bookingForm?.addEventListener('submit', (event) => {
-  event.preventDefault();
-  bookingForm.querySelector('.form-success')?.classList.add('show');
-  bookingForm.reset();
-});
-
 const yearElement = document.getElementById('yearNow');
 if (yearElement) yearElement.textContent = new Date().getFullYear();
+
+const bookingForm = document.getElementById('bookingForm');
+const formToast = document.getElementById('formToast');
+const toastCloseButton = formToast?.querySelector('.form-toast-close');
+let toastTimer;
+
+function showFormToast(type, title, message) {
+  if (!formToast) return;
+
+  formToast.classList.remove('success', 'error', 'show');
+  formToast.classList.add(type);
+
+  const titleElement = formToast.querySelector('strong');
+  const messageElement = formToast.querySelector('p');
+  const iconElement = formToast.querySelector('.form-toast-icon');
+
+  if (titleElement) titleElement.textContent = title;
+  if (messageElement) messageElement.textContent = message;
+  if (iconElement) iconElement.textContent = type === 'success' ? '✓' : '!';
+
+  requestAnimationFrame(() => formToast.classList.add('show'));
+
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    formToast.classList.remove('show');
+  }, 5500);
+}
+
+toastCloseButton?.addEventListener('click', () => {
+  clearTimeout(toastTimer);
+  formToast?.classList.remove('show');
+});
+
+bookingForm?.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const submitButton = bookingForm.querySelector('button[type="submit"]');
+  const originalButtonText = submitButton?.textContent || 'Trimite solicitarea';
+
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.textContent = 'Se trimite...';
+  }
+
+  try {
+    const response = await fetch(bookingForm.action, {
+      method: 'POST',
+      body: new FormData(bookingForm),
+      headers: {
+        Accept: 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Formspree request failed');
+    }
+
+    bookingForm.reset();
+    showFormToast(
+      'success',
+      'Solicitare trimisă',
+      'Mulțumim! Te vom contacta pentru confirmarea programării.'
+    );
+  } catch (error) {
+    showFormToast(
+      'error',
+      'Trimiterea a eșuat',
+      'Solicitarea nu a putut fi trimisă. Verifică internetul și încearcă din nou.'
+    );
+  } finally {
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
+    }
+  }
+});
+

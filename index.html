@@ -255,28 +255,48 @@
           </div>
         </div>
 
-        <form class="booking-form reveal delay-1" id="bookingForm">
+        <form
+          class="booking-form reveal delay-1"
+          id="bookingForm"
+          action="https://formspree.io/f/mrenbpzd"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="Programare nouă - CHS Motors">
+
           <div class="form-row">
             <label>Nume<input type="text" name="name" placeholder="Numele tău" required></label>
             <label>Telefon<input type="tel" name="phone" placeholder="07xx xxx xxx" required></label>
           </div>
+
           <div class="form-row">
             <label>Marcă și model<input type="text" name="car" placeholder="Ex: Honda Civic" required></label>
             <label>An fabricație<input type="number" name="year" min="1980" max="2030" placeholder="2019"></label>
           </div>
+
           <label>Serviciu
             <select name="service" required>
               <option value="">Selectează serviciul</option>
-              <option>Scanare rapidă</option>
-              <option>Diagnoză completă</option>
-              <option>Analiză parametri live</option>
+              <option value="Scanare rapidă">Scanare rapidă</option>
+              <option value="Diagnoză completă">Diagnoză completă</option>
+              <option value="Analiză parametri live">Analiză parametri live</option>
             </select>
           </label>
+
           <label>Simptome / detalii<textarea name="message" rows="4" placeholder="Descrie când apare problema, martorii aprinși și orice intervenție recentă."></textarea></label>
+
           <button class="btn btn-primary full" type="submit">Trimite solicitarea</button>
-          <p class="form-note">Formular demonstrativ frontend-only. Pentru trimitere reală este necesar un serviciu precum Formspree, EmailJS sau un backend.</p>
-          <div class="form-success" role="status">Solicitarea a fost înregistrată în demonstrație. Te vom contacta pentru confirmare.</div>
+
+          <p class="form-note">Datele completate vor fi trimise către CHS Motors pentru confirmarea programării.</p>
         </form>
+
+        <div class="form-toast" id="formToast" role="status" aria-live="polite">
+          <span class="form-toast-icon" aria-hidden="true">✓</span>
+          <div>
+            <strong>Solicitare trimisă</strong>
+            <p>Mulțumim! Te vom contacta pentru confirmarea programării.</p>
+          </div>
+          <button type="button" class="form-toast-close" aria-label="Închide notificarea">×</button>
+        </div>
       </div>
     </section>
   </main>
